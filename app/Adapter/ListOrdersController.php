@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Adapter;
 
 use App\Grpc\Message\ListOrdersRequest;
 use App\Grpc\Message\ListOrdersResponse;

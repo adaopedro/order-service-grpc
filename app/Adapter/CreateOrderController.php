@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Adapter;
 
-use App\Adapter\Grpc\OrderGrpcMapper;
+use App\Adapter\OrderGrpcMapper;
 use App\Application\UseCase\CreateOrderUseCase;
 use App\Grpc\Message\CreateOrderRequest;
 use App\Grpc\Message\Order;

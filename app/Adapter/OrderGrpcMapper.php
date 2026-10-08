@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Adapter\Grpc;
+namespace App\Adapter;
 
 use App\Application\Dto\CreateOrderInput;
 use App\Application\Dto\CreateOrderOutput;
