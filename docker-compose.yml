@@ -1,0 +1,33 @@
+services:
+  app:
+    build:
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./:/opt/www
+    ports:
+      - "9501:9501"
+    environment:
+      APP_ENV: dev
+      SCAN_CACHEABLE: "false"
+      DB_HOST: mysql
+      DB_NAME: orders
+      REDIS_HOST: redis
+    depends_on:
+      - mysql
+      - redis
+    entrypoint: ["php", "bin/hyperf.php", "server:watch"]
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+      MYSQL_DATABASE: orders
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  redis:
+    image: redis:7.4-alpine
+    command: redis-server --maxmemory 256mb
+
+volumes:
+  mysql_data:

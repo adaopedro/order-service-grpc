@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package OrderPackage;
+
+option php_namespace = "App\\Grpc\\Message";
+option php_metadata_namespace = "App\\Grpc\\GPBMetadata";
+
+import "google/protobuf/timestamp.proto";
+
+service OrderService {
+  rpc CreateOrder (CreateOrderRequest) returns (Order);
+  rpc GetOrder    (GetOrderRequest)    returns (Order);
+  rpc ListOrders  (ListOrdersRequest)  returns (ListOrdersResponse);
+  rpc CancelOrder (CancelOrderRequest) returns (Order);
+}
+
+enum OrderStatus {
+  ORDER_STATUS_UNSPECIFIED = 0;
+  ORDER_STATUS_PENDING     = 1;
+  ORDER_STATUS_PAID        = 2;
+  ORDER_STATUS_CANCELLED   = 3;
+}
+
+message OrderItem { string id = 1; int32 qty = 2; float unit_price = 3; }
+
+message CreateOrderRequest {
+  string user_id = 2;
+  repeated OrderItem items = 3;
+}
+message GetOrderRequest  { string id = 1; }
+message CancelOrderRequest { string id = 1; string reason = 2; }
+message ListOrdersRequest { string user_id = 1; int32 page_size = 2; int32 page_token = 3;  }
+message ListOrdersResponse { repeated Order orders = 1; }
+
+message Order {
+  string id = 1;
+  string user_id = 2;
+  OrderStatus status = 3;
+  repeated OrderItem items = 4;
+  float total = 5;
+  google.protobuf.Timestamp created_at = 6;
+}
