@@ -12,7 +12,7 @@ Router::addServer("grpc", function () {
     Router::addGroup("/OrderPackage.OrderService", function () {
         Router::post("/CreateOrder", [CreateOrderController::class, "index"]);
         // Router::post("/GetOrder", [App\Controller\OrderController::class, "getOrder"]);
-        Router::post("/ListOrders", [ListOrdersController::class, "index"]);
+        // Router::post("/ListOrders", [ListOrdersController::class, "index"]);
         // Router::post("/CancelOrder", [App\Controller\OrderController::class, "cancelOrder"]);
     });
 });
