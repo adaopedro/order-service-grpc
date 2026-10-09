@@ -32,7 +32,7 @@ class OrderGrpcMapper
         return (new GrpcOrder())
             ->setId($output->id)
             ->setUserId($output->userId)
-            ->setStatus($output->status)
+            ->setStatus($output->status->value)
             ->setTotal($output->total)
             ->setCreatedAt($timestamp)
             ->setItems(array_map(

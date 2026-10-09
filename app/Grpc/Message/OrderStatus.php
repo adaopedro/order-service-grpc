@@ -12,27 +12,27 @@ use UnexpectedValueException;
 class OrderStatus
 {
     /**
-     * Generated from protobuf enum <code>ORDER_STATUS_UNSPECIFIED = 0;</code>
+     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
      */
-    const ORDER_STATUS_UNSPECIFIED = 0;
+    const UNSPECIFIED = 0;
     /**
-     * Generated from protobuf enum <code>ORDER_STATUS_PENDING = 1;</code>
+     * Generated from protobuf enum <code>PENDING = 1;</code>
      */
-    const ORDER_STATUS_PENDING = 1;
+    const PENDING = 1;
     /**
-     * Generated from protobuf enum <code>ORDER_STATUS_PAID = 2;</code>
+     * Generated from protobuf enum <code>PAID = 2;</code>
      */
-    const ORDER_STATUS_PAID = 2;
+    const PAID = 2;
     /**
-     * Generated from protobuf enum <code>ORDER_STATUS_CANCELLED = 3;</code>
+     * Generated from protobuf enum <code>CANCELLED = 3;</code>
      */
-    const ORDER_STATUS_CANCELLED = 3;
+    const CANCELLED = 3;
 
     private static $valueToName = [
-        self::ORDER_STATUS_UNSPECIFIED => 'ORDER_STATUS_UNSPECIFIED',
-        self::ORDER_STATUS_PENDING => 'ORDER_STATUS_PENDING',
-        self::ORDER_STATUS_PAID => 'ORDER_STATUS_PAID',
-        self::ORDER_STATUS_CANCELLED => 'ORDER_STATUS_CANCELLED',
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::PENDING => 'PENDING',
+        self::PAID => 'PAID',
+        self::CANCELLED => 'CANCELLED',
     ];
 
     public static function name($value)
